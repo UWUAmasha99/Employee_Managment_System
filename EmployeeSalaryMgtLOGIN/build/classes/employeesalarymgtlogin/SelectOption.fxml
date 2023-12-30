@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1103.0" style="-fx-background-color: #142F43;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeesalarymgtlogin.SelectOptionController">
+   <children>
+      <ImageView fitHeight="656.0" fitWidth="1103.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/BakgroundIMG.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#142f43" height="620.0" layoutX="1.0" layoutY="30.0" opacity="0.68" stroke="#e4dfdf" strokeType="OUTSIDE" width="1103.0" />
+      <AnchorPane layoutX="139.0" layoutY="247.0" prefHeight="192.0" prefWidth="186.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="172.0" fitWidth="139.0" layoutX="22.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/employee.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="459.0" layoutY="247.0" prefHeight="192.0" prefWidth="186.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="133.0" fitWidth="126.0" layoutX="30.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/calculate.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="783.0" layoutY="247.0" prefHeight="192.0" prefWidth="186.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="117.0" fitWidth="208.0" layoutX="5.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Image/printer.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnEmp" layoutX="151.0" layoutY="463.0" mnemonicParsing="false" onAction="#EmpDetails" text="Employee Details">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnSal" layoutX="476.0" layoutY="463.0" mnemonicParsing="false" onAction="#Salary" text="Calculate Salary">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="btnprint" layoutX="815.0" layoutY="463.0" mnemonicParsing="false" onAction="#Print" text="Print Details">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <MenuBar layoutY="-2.0" prefHeight="32.0" prefWidth="1105.0" style="-fx-background-color: #C8E3D4;">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="DetailsMenue" mnemonicParsing="false" onAction="#empdetails" text="Employee Details" />
+                  <MenuItem fx:id="CalMenue" mnemonicParsing="false" onAction="#calsal" text="Calculate Salary" />
+                  <MenuItem fx:id="PrintMenue" mnemonicParsing="false" onAction="#printdetails" text="Print Details" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Back">
+            <items>
+              <MenuItem fx:id="BackMenue" mnemonicParsing="false" onAction="#menuback" text="Back" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Forward">
+            <items>
+              <MenuItem fx:id="ForwardMenue" mnemonicParsing="false" onAction="#forward" text="Forward" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+              <items>
+                <MenuItem fx:id="LogOutMenue" mnemonicParsing="false" onAction="#menulogout" text="Logout" />
+                  <MenuItem fx:id="CloseMenue" mnemonicParsing="false" onAction="#menuclose" text="Close" />
+              </items>
+            </Menu>
+        </menus>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </MenuBar>
+      <Text fill="#a4a2a2" layoutX="877.0" layoutY="666.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Management System" />
+      <Text fill="#e8e3e3" layoutX="115.0" layoutY="146.0" stroke="#fcf2f2" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose Your Task Here...">
+         <font>
+            <Font name="System Bold" size="34.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="41.0" fitWidth="38.0" layoutX="34.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/571-5717314_previous-page-back-arrow-icon-transparent-hd-png.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnback" layoutX="26.0" layoutY="111.0" mnemonicParsing="false" onAction="#back" opacity="0.02" prefHeight="41.0" prefWidth="49.0" textFill="WHITE" />
+   </children>
+</AnchorPane>

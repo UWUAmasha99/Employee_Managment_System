@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1103.0" style="-fx-background-color: #142F43;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeesalarymgtlogin.SalaryController">
+    <stylesheets>
+        <URL value="@salary.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="1150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/BakgroundIMG.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane opacity="0.8" prefHeight="700.0" prefWidth="1148.0" style="-fx-background-color: #000000;">
+         <children>
+            <Text fill="#fff8f8" layoutX="85.0" layoutY="110.0" stroke="#fcf2f2" strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Calculation...">
+               <font>
+                  <Font name="System Bold" size="34.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="69.0" layoutY="173.0" prefHeight="91.0" prefWidth="971.0" style="-fx-border-color: #ffffff; -fx-background-color: #54555d;">
+               <children>
+                  <Label layoutX="41.0" layoutY="53.0" text="Employee Name : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="empname" layoutX="195.0" layoutY="48.0" prefHeight="31.0" prefWidth="235.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="517.0" layoutY="13.0" text="Position : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emppos" layoutX="666.0" layoutY="8.0" prefHeight="31.0" prefWidth="235.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="47.0" layoutY="13.0" text="Employee ID :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="empid" layoutX="195.0" layoutY="8.0" onKeyPressed="#EmployeeData" prefHeight="31.0" prefWidth="235.0" promptText="EX: E001">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="517.0" layoutY="53.0" text="Invoice Number : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="einvoice" layoutX="666.0" layoutY="48.0" prefHeight="31.0" prefWidth="235.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="72.0" layoutY="373.0" maxHeight="-Infinity" prefHeight="186.0" prefWidth="472.0" style="-fx-border-color: #ffffff; -fx-background-color: #54555d;">
+               <children>
+                  <Label layoutX="22.0" layoutY="14.0" text="Additions : " textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="22.0" layoutY="47.0" text="Bonus :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="94.0" onKeyPressed="#Next" prefHeight="31.0" prefWidth="106.0" fx:id="xot">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="22.0" layoutY="97.0" text="OT Hours :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="252.0" layoutY="139.0" text="Other :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="326.0" layoutY="136.0" prefHeight="31.0" prefWidth="116.0" fx:id="xother">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <TextField layoutX="138.0" layoutY="42.0" prefHeight="31.0" prefWidth="305.0" fx:id="xbonus">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <TextField layoutX="326.0" layoutY="94.0" onKeyReleased="#EditOtRate" prefHeight="31.0" prefWidth="116.0" fx:id="xot1">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="253.0" layoutY="99.0" text="OT Rate :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="139.0" layoutY="136.0" onMouseClicked="#MouseClickForOtAmount" prefHeight="31.0" prefWidth="106.0" fx:id="xot2">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="23.0" layoutY="139.0" text="OT Amount :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="588.0" layoutY="329.0" prefHeight="230.0" prefWidth="449.0" style="-fx-border-color: #ffffff; -fx-background-color: #54555d;">
+               <children>
+                  <Label layoutX="13.0" layoutY="41.0" text="EPF : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="14.0" text="Substraction : " textFill="WHITE" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="15.0" layoutY="93.0" text="ETF :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="126.0" layoutY="36.0" prefHeight="31.0" prefWidth="294.0" fx:id="xepf">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <TextField layoutX="126.0" layoutY="134.0" prefHeight="31.0" prefWidth="294.0" fx:id="xadv">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="18.0" layoutY="139.0" text="Advance : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="126.0" layoutY="185.0" prefHeight="31.0" prefWidth="294.0" fx:id="xother2">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <TextField layoutX="126.0" layoutY="88.0" prefHeight="31.0" prefWidth="294.0" fx:id="xetf">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font></TextField>
+                  <Label layoutX="15.0" layoutY="190.0" text="Other :" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Label layoutX="78.0" layoutY="329.0" text="Calculate Gross Salary :" textFill="#cdc3c3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="583.0" layoutY="285.0" text="Calculate Net Salary :" textFill="#cdc3c3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Group layoutX="78.0" layoutY="587.0">
+               <children>
+                  <Label layoutY="5.0" text="Gross Salary : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="gross" layoutX="117.0" onAction="#CalGross" prefHeight="31.0" prefWidth="191.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Group>
+            <Group layoutX="597.0" layoutY="587.0">
+               <children>
+                  <Label layoutY="5.0" text="Net Salary : " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="net" layoutX="112.0" onAction="#CalNet" prefHeight="31.0" prefWidth="191.0">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Group>
+            <Button fx:id="btnGross" layoutX="408.0" layoutY="587.0" mnemonicParsing="false" onAction="#CalGross" text="Gross Salary">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button fx:id="btnnet" layoutX="931.0" layoutY="587.0" mnemonicParsing="false" onAction="#CalNet" text="Net Salary">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <MenuBar layoutX="-5.0" layoutY="-2.0" prefHeight="32.0" prefWidth="1160.0" style="-fx-background-color: #C8E3D4;">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="DetailsMenue" mnemonicParsing="false" onAction="#EmpDetails" text="Employee Details" />
+                        <MenuItem fx:id="PrintMenue" mnemonicParsing="false" onAction="#printdetails" text="Print Details" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Back">
+                     <items>
+                        <MenuItem fx:id="BackMenue" mnemonicParsing="false" onAction="#menuback" text="Back" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Forward">
+                     <items>
+                        <MenuItem fx:id="ForwardMenue" mnemonicParsing="false" onAction="#forward" text="Forward" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Options">
+                     <items>
+                        <MenuItem fx:id="LogOutMenue" mnemonicParsing="false" onAction="#menulogout" text="Logout" />
+                        <MenuItem fx:id="CloseMenue" mnemonicParsing="false" onAction="#menuclose" text="Close" />
+                     </items>
+                  </Menu>
+               </menus>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuBar>
+            <Button fx:id="btnadd" layoutX="279.0" layoutY="649.0" mnemonicParsing="false" onAction="#Add" text="Add Salary">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnedit" layoutX="588.0" layoutY="649.0" mnemonicParsing="false" onAction="#Update" text="Update ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnclear" layoutX="441.0" layoutY="649.0" mnemonicParsing="false" onAction="#Clear" prefHeight="31.0" prefWidth="81.0" text="Clear">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="btndelete" layoutX="717.0" layoutY="649.0" mnemonicParsing="false" onAction="#Delete" prefHeight="31.0" prefWidth="93.0" text="Delete ">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="794.0" layoutY="45.0" text="Year" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="eyear" layoutX="866.0" layoutY="45.0" onKeyReleased="#yearValidate" prefHeight="25.0" prefWidth="150.0">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font></TextField>
+            <Label layoutX="786.0" layoutY="83.0" text="Month" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="empsearch" alignment="TOP_LEFT" layoutX="475.0" layoutY="69.0" onKeyPressed="#SearchData" prefHeight="25.0" prefWidth="163.0" promptText="Enter Employee ID">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font></TextField>
+            <Button fx:id="sch" layoutX="669.0" layoutY="69.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#SalarySearch" prefHeight="25.0" prefWidth="73.0" text="Search" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" />
+               </padding>
+            </Button>
+            <Label layoutX="114.0" layoutY="285.0" text="Basic Salary :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField layoutX="268.0" layoutY="280.0" prefHeight="31.0" prefWidth="235.0" fx:id="xbasic">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font></TextField>
+            <ComboBox fx:id="emonth" layoutX="866.0" layoutY="81.0" onAction="#getMonth" prefWidth="150.0" />
+            <Button fx:id="btnall" layoutX="864.0" layoutY="649.0" minHeight="-Infinity" mnemonicParsing="false" onAction="#ViewAll" prefHeight="31.0" prefWidth="81.0" text="View All" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <padding>
+                  <Insets bottom="3.0" />
+               </padding>
+            </Button>
+            <Group layoutX="22.0" layoutY="69.0">
+               <children>
+                  <Button fx:id="btnback" mnemonicParsing="false" onAction="#back" opacity="0.0" prefHeight="54.0" prefWidth="65.0" />
+                  <ImageView fitHeight="31.0" fitWidth="25.0" layoutX="20.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Image/571-5717314_previous-page-back-arrow-icon-transparent-hd-png.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

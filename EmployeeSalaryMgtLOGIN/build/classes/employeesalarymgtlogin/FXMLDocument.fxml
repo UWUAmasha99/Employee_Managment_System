@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="685.0" prefWidth="1103.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employeesalarymgtlogin.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="47.0" layoutY="112.0" minHeight="16" minWidth="69" prefHeight="246.0" prefWidth="374.0" text="Welcome to Salary Management System" textAlignment="CENTER" textFill="#ebdbdb" wrapText="true">
+         <font>
+            <Font name="System Bold" size="38.0" />
+         </font></Label>
+      <ImageView fitHeight="764.0" fitWidth="570.0" layoutX="-5.0" opacity="0.12" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Image/Acc.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="569.0" layoutY="75.0" prefHeight="567.0" prefWidth="460.0" style="-fx-background-color: #334756;">
+         <children>
+            <Label layoutX="200.0" layoutY="60.0" text="LogIn" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="144.0" text="UserName / Email : " textFill="#dacbcb" />
+            <TextField fx:id="TxtUserName" layoutX="85.0" layoutY="177.0" prefHeight="31.0" prefWidth="297.0" style="-fx-background-color: #A5BECC; -fx-border-color: #73777B; -fx-font: #F9F9F9; -fx-font-size: 15px;" />
+            <Label layoutX="82.0" layoutY="248.0" text="Password : " textFill="#dacbcb" />
+            <PasswordField fx:id="TxtPassword" layoutX="82.0" layoutY="280.0" prefHeight="31.0" prefWidth="303.0" style="-fx-background-color: #A5BECC; -fx-border-color: #73777B;" />
+            <Button fx:id="BtnLogin" layoutX="181.0" layoutY="387.0" mnemonicParsing="false" onAction="#LogIn" prefHeight="41.0" prefWidth="123.0" style="-fx-background-color: #73777B; -fx-border-color: #F1EEE9 #DDDDDD; -fx-border-radius: 5px;" text="LogIn" textAlignment="CENTER" textFill="#fcfafa">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="155.0" layoutY="479.0" prefHeight="21.0" prefWidth="168.0" text="Forgot Your Password ? " textFill="#8fb8da" />
+            <Button fx:id="btnforgot" layoutX="145.0" layoutY="474.0" mnemonicParsing="false" onAction="#forgotbutton" opacity="0.0" prefHeight="31.0" prefWidth="176.0" textFill="#a5a7bc" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="BtnLogout" layoutX="169.0" layoutY="483.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="34.0" prefWidth="191.0" style="-fx-background-color: #73777B; -fx-border-color: #DDDDDD; -fx-border-radius: 5px;" text="LogOut" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Label layoutX="218.0" layoutY="375.0" text="- User Friendly" textFill="#9a8f8f" />
+      <Label layoutX="333.0" layoutY="375.0" text="- Latest Design" textFill="#9a8f8f" />
+      <Label layoutX="72.0" layoutY="375.0" text="- High Resolution" textFill="#9a8f8f" />
+    </children>
+</AnchorPane>
